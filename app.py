@@ -7,11 +7,10 @@ def parallel(resistances):
         r_sum = 0
         for resistance in resistances:
             r_sum = r_sum + (1/resistance)
+
+        print("{:.3f}".format(1/r_sum), "ohms")
     else:
         print("Please enter at least 2 values")
-    return(1/r_sum)
-
-#print(parallel([2, 5, 3, 5]))
 
 
 #Write a function, `potential_divider()`, that takes two values as argument, a number that 
@@ -30,9 +29,9 @@ def potential_divider(v_supply, s_resistances):
     for r in s_resistances:
         v_res.append(current*r)
 
-    print(v_res)
+    for x in v_res:
+        print("{:.2f}".format(x), "v")
 
-#potential_divider(9, [3000, 1000])
 
 #Write a function, `temperature_check()`, that accepts a single number, a patient's body temperature, 
 #and a single character, the unit of temperature. The function should output whether the patient is 
@@ -55,5 +54,3 @@ def temperature_check(temp, temp_type):
         print("You are hypothermic!")
     else:
         print("You are normal :/")
-
-#temperature_check(37, "c")
